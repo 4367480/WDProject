@@ -2,6 +2,8 @@
 <html>
 <head>
 	<title>TODO Application</title>
+	<script src = "app.js">
+    </script>
 </head>
 <header>
 	<!--Shows the Logo/Text-->
@@ -25,28 +27,37 @@
 
 		<!--Sort options-->
 		<div class="main_left_sortoptions">
-			<h3> Options here</h3>
+			<button id="sort_newold" onclick = "sortNewTop()">Newest</button> <button type="sort_oldnew">Oldest</button>
 		</div>
 	</div>
 
 	<!--Tasks-->
 	<div class="main_middle">
 		<!--Add new task-->
-		<div class="main_middle_newtask"> 
-			<form action="new_task.asp">
-				<input type="text" name="f_task"><br>
-				<input type="submit" value="Add new task">
-			</form>	
+		<div class="main_middle_newtask">
+			<h1>Add new task</h1> 
+			<form> 
+			<input type="text" id="f_task"> 
+			<input type="button" value="Add new task" id="addnewTaskbutton" onclick="createtask(document.getElementById('f_task').value, document.getElementById('f_duedate').value, document.getElementById('f_reminder').value, document.getElementById('f_note').value)"> 
+			</form>
 		</div>
 
 		<!--Options for new task-->
 		<div class="main_middle_options"> 
-			<h3> Options here </h3>
+		<form> 
+			Duedate: <input type="text" id="f_duedate">  
+			Reminder: <input type="text" id="f_reminder"> 
+			Note: <input type="text" id="f_note"></form> 
 		</div>
 
 		<!--Display of tasks-->
-		<div class="main_middle_tasks"> 
-			<h3> Tasks here</h3>
+		<div id="main_middle_activetasks"> 
+			<h3> Active Tasks</h3>
+		</div>
+
+		<!--Completed tasks-->
+		<div id="main_middle_completedtasks"> 
+			<h3> Completed Tasks</h3>
 		</div>
 		
 	</div>
@@ -55,9 +66,10 @@
 	<div class="main_right">
 		<!--Add new sub task-->
 		<div class="main_right_newsubtask"> 
-			<form action="new_subtask.asp">
-				<input type="text" name="f_newsubtask"><br>
-				<input type="submit" value="Add new subtask">
+			<form action="X2"
+			formmethod="post">
+				<input type="text" id="f_newsubtask"><br>
+				<input type="button" value="Add new subtask" id="addnewsubtaskbutton">
 			</form>	
 		</div>
 
