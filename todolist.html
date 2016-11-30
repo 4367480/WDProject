@@ -27,7 +27,8 @@
 
 		<!--Sort options-->
 		<div class="main_left_sortoptions">
-			<button id="sort_newold" onclick = "sortNewTop()">Newest</button> <button type="sort_oldnew">Oldest</button>
+			<button id="sort_newold" onclick = "sortNewTop()">Newest</button> 
+			<button type="sort_oldnew">Oldest</button>
 		</div>
 	</div>
 
@@ -38,49 +39,30 @@
 			<h1>Add new task</h1> 
 			<form> 
 			<input type="text" id="f_task"> 
-			<input type="button" value="Add new task" id="addnewTaskbutton" onclick="createtask(document.getElementById('f_task').value, document.getElementById('f_duedate').value, document.getElementById('f_reminder').value, document.getElementById('f_note').value)"> 
+			<input type="button" value="Add new task" id="addnewTaskbutton" onclick="createtask(
+			document.getElementById('f_task').value,
+			document.getElementById('f_tag').value,
+			document.getElementById('f_priority').value,  
+			document.getElementById('f_duedate').value, 
+			document.getElementById('f_reminder').value, 
+			document.getElementById('f_note').value)"> 
 			</form>
 		</div>
 
 		<!--Options for new task-->
 		<div class="main_middle_options"> 
 		<form> 
-			Duedate: <input type="text" id="f_duedate">  
-			Reminder: <input type="text" id="f_reminder"> 
-			Note: <input type="text" id="f_note"></form> 
+			Tag: <input type="text" id="f_tag">	
+			Priority: <input type="number" id="f_priority" min="1" max="5">	
+			Duedate: <input type="date" id="f_duedate">  
+			Reminder: <input type="date" id="f_reminder">
+			Note: <input type="text" id="f_note">
+		</form> 
 		</div>
 
 		<!--Display of tasks-->
 		<div id="main_middle_activetasks"> 
 			<h3> Active Tasks</h3>
-		</div>
-
-		<!--Completed tasks-->
-		<div id="main_middle_completedtasks"> 
-			<h3> Completed Tasks</h3>
-		</div>
-		
-	</div>
-
-	<!--Subtasks-->
-	<div class="main_right">
-		<!--Add new sub task-->
-		<div class="main_right_newsubtask"> 
-			<form action="X2"
-			formmethod="post">
-				<input type="text" id="f_newsubtask"><br>
-				<input type="button" value="Add new subtask" id="addnewsubtaskbutton">
-			</form>	
-		</div>
-
-		<!--Options for new task-->
-		<div class="main_right_options"> 
-			<h3> Options here </h3>
-		</div>
-
-		<!--Display of subtasks-->
-		<div class="main_right_subtasks"> 
-			<h3> Tasks here</h3>
 		</div>
 	</div>
 </main>
