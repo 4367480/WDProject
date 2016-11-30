@@ -119,7 +119,7 @@ var active_checkbox = function(newtask, cb_id, paragraphid) {
 		//	newtask.setactive();
 		//	p.parentNode.removeChild(p);
 		//	activetask.appendChild(p);
-		}
+		//}
 
 	}
 	return cb_active;
